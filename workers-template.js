@@ -85,7 +85,7 @@ async function fetchWithTimeout(u, opts = {}, ms = 5000) {
 
 async function aggregateSubs(urls = [], request, env, opts = {}) {
   if (!urls || urls.length === 0) return [[], ""];
-  urls = [...new Set(urls.map(u => (u||"\").trim()).filter(Boolean))];
+  urls = [...new Set(urls.map(u => (u||" ").trim()).filter(Boolean))];
   let raw = "";
   let converterParts = [];
   const tasks = urls.map(u => (async () => {
@@ -99,7 +99,7 @@ async function aggregateSubs(urls = [], request, env, opts = {}) {
         converterParts.push(u);
       } else if (isBase64(text)) {
         raw += base64DecodeSafe(text) + "\n";
-      } else if (text.includes('://')) {
+      } else if (text.includes("://")) {
         raw += text + "\n";
       } else {
         raw += text + "\n";
