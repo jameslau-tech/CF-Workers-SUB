@@ -149,8 +149,11 @@ export default {
 			const text = utf8Decoder.decode(encodedData);
 
 			//去重
-			const uniqueLines = new Set(text.split('\n'));
-			const result = [...uniqueLines].join('\n');
+///			const uniqueLines = new Set(text.split('\n'));
+             req_data = await smartDedup(req_data);
+
+            const uniqueLines = new Set(req_data.split('\n'));
+    		const result = [...uniqueLines].join('\n');
 			//console.log(result);
 
 			let base64Data;
@@ -494,6 +497,68 @@ async function 迁移地址列表(env, txt = 'ADD.txt') {
 		return true;
 	}
 	return false;
+}
+async function smartDedup(data) {
+	const lines = data.split('\n').filter(Boolean);
+
+	const map = new Map();
+	const result = [];
+
+	for (const line of lines) {
+		try {
+			if (
+				line.startsWith('vmess://') ||
+				line.startsWith('vless://') ||
+				line.startsWith('trojan://') ||
+				line.startsWith('ss://') ||
+				line.startsWith('hysteria://') ||
+				line.startsWith('hy2://') ||
+				line.startsWith('tuic://')
+			) {
+
+				let protocol = '';
+				let server = '';
+				let port = '';
+
+				// VMESS
+				if (line.startsWith('vmess://')) {
+					protocol = 'vmess';
+
+					const json = JSON.parse(
+						atob(line.replace('vmess://', ''))
+					);
+
+					server = json.add || '';
+					port = json.port || '';
+				}
+
+				// VLESS / TROJAN / TUIC / HY2
+				else {
+					const url = new URL(line);
+
+					protocol = url.protocol.replace(':', '');
+					server = url.hostname;
+					port = url.port;
+				}
+
+				const key = `${protocol}-${server}-${port}`;
+
+				if (!map.has(key)) {
+					map.set(key, true);
+					result.push(line);
+				}
+
+			} else {
+				// 非节点内容保留
+				result.push(line);
+			}
+		} catch (e) {
+			// 解析失败保留原始内容
+			result.push(line);
+		}
+	}
+
+	return result.join('\n');
 }
 
 async function KV(request, env, txt = 'ADD.txt', guest) {
