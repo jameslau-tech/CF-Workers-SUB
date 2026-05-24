@@ -498,68 +498,89 @@ async function 迁移地址列表(env, txt = 'ADD.txt') {
 	}
 	return false;
 }
+
 async function smartDedup(data) {
-	const lines = data.split('\n').filter(Boolean);
+    const lines = data.split('\n').filter(Boolean);
+    const map = new Map();
+    const result = [];
 
-	const map = new Map();
-	const result = [];
+    for (const line of lines) {
+        try {
+            let key = '';
 
-	for (const line of lines) {
-		try {
-			if (
-				line.startsWith('vmess://') ||
-				line.startsWith('vless://') ||
-				line.startsWith('trojan://') ||
-				line.startsWith('ss://') ||
-				line.startsWith('hysteria://') ||
-				line.startsWith('hy2://') ||
-				line.startsWith('tuic://')
-			) {
+            if (line.startsWith('vmess://')) {
+                // VMESS: 提取 地址、端口、网络类型、路径、Host、加密方式
+                const json = JSON.parse(atob(line.replace('vmess://', '')));
+                key = `vmess-${json.add}-${json.port}-${json.net || 'tcp'}-${json.path || ''}-${json.host || ''}-${json.scy || 'auto'}`;
+            } 
+            else if (line.startsWith('vless://') || line.startsWith('trojan://') || line.startsWith('tuic://') || line.startsWith('hysteria://') || line.startsWith('hy2://')) {
+                // VLESS/TROJAN/TUIC/HY2: 提取 地址、端口、传输类型、路径、Host/SNI、底层安全
+                const url = new URL(line);
+                const params = url.searchParams;
+                const type = params.get('type') || 'tcp';
+                const path = params.get('path') || params.get('serviceName') || '';
+                const host = params.get('host') || params.get('sni') || '';
+                const security = params.get('security') || params.get('encryption') || 'none';
+                key = `${url.protocol}-${url.hostname}-${url.port}-${type}-${path}-${host}-${security}`;
+            } 
+            else if (line.startsWith('ss://')) {
+                // Shadowsocks: 提取 地址、端口、加密方式
+                let content = line.replace('ss://', '');
+                let server = '', port = '', method = '';
+                
+                if (!content.includes('@')) {
+                    // 旧版格式 ss://base64(method:password)@server:port
+                    try {
+                        const decoded = atob(content.split('#')[0]);
+                        const atIndex = decoded.lastIndexOf('@');
+                        method = decoded.substring(0, decoded.indexOf(':'));
+                        server = decoded.substring(atIndex + 1, decoded.lastIndexOf(':'));
+                        port = decoded.substring(decoded.lastIndexOf(':') + 1);
+                    } catch(e) {}
+                } else {
+                    // SIP002格式 ss://base64(method:password)@server:port
+                    const hashIndex = content.indexOf('#');
+                    const mainPart = hashIndex > -1 ? content.substring(0, hashIndex) : content;
+                    const atIndex = mainPart.lastIndexOf('@');
+                    const serverPort = mainPart.substring(atIndex + 1);
+                    const serverPortParts = serverPort.split(':');
+                    server = serverPortParts[0];
+                    port = serverPortParts[1];
 
-				let protocol = '';
-				let server = '';
-				let port = '';
+                    try {
+                        const userInfo = atob(mainPart.substring(0, atIndex));
+                        method = userInfo.split(':')[0];
+                    } catch(e) {
+                        method = mainPart.substring(0, atIndex).split(':')[0];
+                    }
+                }
+                key = server && port ? `ss-${server}-${port}-${method}` : `ss-${line}`;
+            } 
+            else {
+                // 非节点内容或无法识别的协议，使用全文作为兜底key
+                key = line;
+            }
 
-				// VMESS
-				if (line.startsWith('vmess://')) {
-					protocol = 'vmess';
+            // 统一转为小写并去除首尾空格，增强鲁棒性
+            key = key.toLowerCase().trim();
 
-					const json = JSON.parse(
-						atob(line.replace('vmess://', ''))
-					);
-
-					server = json.add || '';
-					port = json.port || '';
-				}
-
-				// VLESS / TROJAN / TUIC / HY2
-				else {
-					const url = new URL(line);
-
-					protocol = url.protocol.replace(':', '');
-					server = url.hostname;
-					port = url.port;
-				}
-
-				const key = `${protocol}-${server}-${port}`;
-
-				if (!map.has(key)) {
-					map.set(key, true);
-					result.push(line);
-				}
-
-			} else {
-				// 非节点内容保留
-				result.push(line);
-			}
-		} catch (e) {
-			// 解析失败保留原始内容
-			result.push(line);
-		}
-	}
-
-	return result.join('\n');
+            if (!map.has(key)) {
+                map.set(key, true);
+                result.push(line);
+            }
+        } catch (e) {
+            // 解析失败的节点，保守起见直接保留，并使用原文去重
+            const fallbackKey = line.trim();
+            if (!map.has(fallbackKey)) {
+                map.set(fallbackKey, true);
+                result.push(line);
+            }
+        }
+    }
+    return result.join('\n');
 }
+
+
 
 async function KV(request, env, txt = 'ADD.txt', guest) {
 	const url = new URL(request.url);
