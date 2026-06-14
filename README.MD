@@ -1,36 +1,24 @@
 # 🌐 Cloudflare 优选 IP
 
 
-**本次更新**: 2026-06-13 21:42:12
-> **✨ 新增节点**: 北京电信优选    
-> **测试环境**: 中国四川联通 / 北京电信    
-> **更新频率**: 每 45 分钟自动更新    
-
+**本次更新**: 2026-06-14 21:35:03
 ---
 # 修改github的库和token在start.sh里面
 # 修改上传proxy在push的sh里面
 # 修改最优下载的速度在update的py文件里面
-## 🔗 订阅链接
-
-| 线路分类 | 高速优选 (推荐) | 所有可用 (适合二次测速) |
-| --- | --- | --- |
-| **四川联通** | [点击复制](https://raw.githubusercontent.com/HandsomeMJZ/cfip/refs/heads/main/best_ips.txt) | [点击复制](https://raw.githubusercontent.com/HandsomeMJZ/cfip/refs/heads/main/full_ips.txt) |
-| **北京电信 ✨** | [点击复制](https://raw.githubusercontent.com/HandsomeMJZ/cfip/refs/heads/main/best_ips_bj.txt) | [点击复制](https://raw.githubusercontent.com/HandsomeMJZ/cfip/refs/heads/main/full_ips_bj.txt) |
 
 ### 💡 链接区别说明
 
 * **高速优选**: 已通过自动化测速，直接筛选出的最优节点，**强烈推荐小白用户直接使用**。
 * **所有可用**: 筛选出各地区延迟最低的前 10 个节点，不保证最终吞吐速度，适合有进阶需求的用户二次筛选。
-
+* **best_ips.txt: 居于上海电信晚高峰刷选，24小时运行一次
 ---
 
 ## 🛠️ 同款工具
 
 如果你希望在本地自主测速，请访问：
-
 * **仓库地址**: [HandsomeMJZ/cfip-tools](https://github.com/HandsomeMJZ/cfip-tools)
 * **提示**: 仓库提供已编译好的 Windows 版本，开箱即用。
-
 ---
 
 ## 📖 使用说明
