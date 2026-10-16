@@ -1,21 +1,86 @@
-65.49.231.108:443#CA_1
-45.131.71.168:443#DE_1
-43.175.131.30:443#HK_1
-43.128.230.202:443#JP_1
-35.73.153.172:443#JP_2
-43.167.224.16:443#JP_3
-119.28.162.98:443#KR_1
-101.33.68.172:443#KR_2
-150.109.240.55:443#KR_3
-168.107.59.24:443#KR_4
-140.235.11.73:443#SG_1
-202.148.221.133:443#TW_1
-179.255.136.189:443#US_1
-179.255.103.98:443#US_2
-179.253.239.112:443#US_3
-179.255.140.165:443#US_4
-179.255.140.146:443#US_5
-179.255.136.237:443#US_6
-179.255.98.220:443#US_7
-179.253.255.157:443#US_8
-179.255.132.206:443#US_9
+52.79.49.235:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._1
+52.78.141.133:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._2
+54.116.250.226:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._3
+3.37.58.69:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._4
+13.125.9.223:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._5
+13.125.141.213:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._6
+54.116.249.102:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._7
+52.79.188.223:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._8
+43.202.32.50:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._9
+3.38.190.222:443#ICN-KR-AS16509-Seoul-Asia Pacific-Amazon.com, Inc._10
+45.155.220.155:443#KIX-JP-AS134835-Osaka-Asia Pacific-Starry Network Limited_1
+166.88.100.110:443#KIX-JP-AS149440-Osaka-Asia Pacific-Evoxt Sdn. Bhd._1
+166.88.99.232:443#KIX-JP-AS149440-Osaka-Asia Pacific-Evoxt Sdn. Bhd._2
+166.88.98.39:443#KIX-JP-AS149440-Osaka-Asia Pacific-Evoxt Sdn. Bhd._3
+60.130.209.253:443#KIX-JP-AS17676-Osaka-Asia Pacific-SoftBank Corp._1
+108.165.100.106:443#KIX-JP-AS20473-Osaka-Asia Pacific-The Constant Company, LLC_1
+92.113.124.27:443#NRT-JP-AS134677-Tokyo-Asia Pacific-Dromatics Systems Pte Ltd_1
+103.204.174.135:443#NRT-JP-AS134835-Tokyo-Asia Pacific-Starry Network Limited_1
+103.204.174.201:443#NRT-JP-AS134835-Tokyo-Asia Pacific-Starry Network Limited_2
+103.85.25.249:443#NRT-JP-AS134835-Tokyo-Asia Pacific-Starry Network Limited_3
+103.204.174.27:443#NRT-JP-AS134835-Tokyo-Asia Pacific-Starry Network Limited_4
+103.27.186.237:443#NRT-JP-AS134835-Tokyo-Asia Pacific-Starry Network Limited_5
+82.110.234.121:8443#NRT-JP-AS142433-Tokyo-Asia Pacific-DATAWAVE GLOBAL LLC_1
+82.110.234.64:8443#NRT-JP-AS142433-Tokyo-Asia Pacific-DATAWAVE GLOBAL LLC_2
+154.19.187.213:443#NRT-JP-AS149042-Tokyo-Asia Pacific-Silicon Cloud Global (US)_1
+38.47.52.252:443#NRT-JP-AS149042-Tokyo-Asia Pacific-Silicon Cloud Global (US)_2
+111.229.185.152:8443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._1
+35.74.153.167:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._2
+18.179.112.117:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._3
+35.77.30.203:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._4
+13.231.221.179:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._5
+54.64.43.229:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._6
+54.250.6.134:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._7
+13.114.147.6:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._8
+13.114.101.22:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._9
+52.198.181.9:443#NRT-JP-AS16509-Tokyo-Asia Pacific-Amazon.com, Inc._10
+131.143.214.224:443#NRT-JP-AS18526-Tokyo-Asia Pacific-DDPS Networks, LLC_1
+131.143.214.44:8443#NRT-JP-AS18526-Tokyo-Asia Pacific-DDPS Networks, LLC_2
+131.143.215.177:443#NRT-JP-AS18526-Tokyo-Asia Pacific-DDPS Networks, LLC_3
+45.8.173.43:443#NRT-JP-AS197196-Tokyo-Asia Pacific-Panstar Cloud Limited_1
+216.23.82.224:443#NRT-JP-AS205548-Tokyo-Asia Pacific-Zouter Limited_1
+69.8.131.97:443#NRT-JP-AS212336-Tokyo-Asia Pacific-ByteVirt LLC_1
+69.8.128.249:8443#NRT-JP-AS212336-Tokyo-Asia Pacific-ByteVirt LLC_2
+69.8.131.142:443#NRT-JP-AS212336-Tokyo-Asia Pacific-ByteVirt LLC_3
+140.235.37.72:443#NRT-JP-AS212336-Tokyo-Asia Pacific-ByteVirt LLC_4
+212.135.211.242:443#NRT-JP-AS218737-Tokyo-Asia Pacific-Sp Networking, LLC_1
+212.135.211.96:443#NRT-JP-AS218737-Tokyo-Asia Pacific-Sp Networking, LLC_2
+212.135.210.210:443#NRT-JP-AS218737-Tokyo-Asia Pacific-Sp Networking, LLC_3
+14.137.235.130:443#NRT-JP-AS2497-Tokyo-Asia Pacific-Internet Initiative Japan Inc._1
+14.137.235.154:443#NRT-JP-AS2497-Tokyo-Asia Pacific-Internet Initiative Japan Inc._2
+74.82.221.84:443#NRT-JP-AS25820-Tokyo-Asia Pacific-IT7 Networks Inc_1
+45.143.131.143:8443#NRT-JP-AS3258-Tokyo-Asia Pacific-xTom Japan Corporation_1
+45.192.243.63:443#NRT-JP-AS401615-Tokyo-Asia Pacific-ACCK LLC_1
+152.175.34.232:443#NRT-JP-AS49304-Tokyo-Asia Pacific-Sakura Link Limited_1
+103.238.129.21:443#NRT-JP-AS51847-Tokyo-Asia Pacific-Nearoute Limited_1
+103.238.129.171:443#NRT-JP-AS51847-Tokyo-Asia Pacific-Nearoute Limited_2
+147.79.20.11:443#NRT-JP-AS51847-Tokyo-Asia Pacific-Nearoute Limited_3
+103.76.85.210:443#NRT-JP-AS51847-Tokyo-Asia Pacific-Nearoute Limited_4
+45.192.207.97:443#NRT-JP-AS61112-Tokyo-Asia Pacific-AKILE LTD_1
+154.83.93.236:8443#NRT-JP-AS61112-Tokyo-Asia Pacific-AKILE LTD_2
+156.231.112.160:443#NRT-JP-AS61112-Tokyo-Asia Pacific-AKILE LTD_3
+156.231.113.76:443#NRT-JP-AS61112-Tokyo-Asia Pacific-AKILE LTD_4
+106.75.24.129:2096#NRT-JP-AS63949-Tokyo-Asia Pacific-Akamai Connected Cloud_1
+106.75.153.133:2096#NRT-JP-AS63949-Tokyo-Asia Pacific-Akamai Connected Cloud_2
+64.83.39.176:443#NRT-JP-AS979-Tokyo-Asia Pacific-NetLab Global_1
+193.32.163.81:8443#PDX-US-AS396073-Portland-North America-Majestic Hosting Solutions, LLC_1
+23.246.154.11:443#PDX-US-AS402681-Portland-North America-AYIT_1
+23.246.154.223:8443#PDX-US-AS402681-Portland-North America-AYIT_2
+23.246.154.221:443#PDX-US-AS402681-Portland-North America-AYIT_3
+23.246.154.231:443#PDX-US-AS402681-Portland-North America-AYIT_4
+108.62.160.192:8443#PDX-US-AS7203-Portland-North America-Leaseweb USA, Inc._1
+108.62.161.27:443#PDX-US-AS7203-Portland-North America-Leaseweb USA, Inc._2
+45.63.82.161:443#SJC-US-AS20473-San Jose-North America-The Constant Company, LLC_1
+23.246.155.5:443#SJC-US-AS402681-San Jose-North America-AYIT_1
+23.246.154.102:8443#SJC-US-AS402681-San Jose-North America-AYIT_2
+23.246.154.209:443#SJC-US-AS402681-San Jose-North America-AYIT_3
+23.246.155.22:443#SJC-US-AS402681-San Jose-North America-AYIT_4
+23.246.154.171:443#SJC-US-AS402681-San Jose-North America-AYIT_5
+23.246.154.17:443#SJC-US-AS402681-San Jose-North America-AYIT_6
+23.246.154.144:443#SJC-US-AS402681-San Jose-North America-AYIT_7
+23.246.154.29:443#SJC-US-AS402681-San Jose-North America-AYIT_8
+198.2.237.25:8443#SJC-US-AS54600-San Jose-North America-PEG TECH INC_1
+108.186.158.110:8443#SJC-US-AS6233-San Jose-North America-xTom_1
+108.186.158.150:8443#SJC-US-AS6233-San Jose-North America-xTom_2
+108.186.158.211:443#SJC-US-AS6233-San Jose-North America-xTom_3
+146.19.116.243:443#SJC-US-AS6233-San Jose-North America-xTom_4
